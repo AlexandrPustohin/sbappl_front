@@ -1,9 +1,9 @@
 # sbappl_front
-front-end for sb application
-Фронт-енд часть для REST сервиса UserProfile
-Запускается через сервер (можно Apach или другой) - localhost:номер_порта/имя_папки/
-index.html - основная страница
-newuser.html - страница добавления данных
-manager.js - управление страницами на AngularJS
-Использован Bootstrap
-Не реализована валидация данных и обработка ошидбок от сервера.
+front-end for sb application  <br>
+Фронт-енд часть для REST сервиса UserProfile<br>
+Запускается через сервер (можно Apach или другой) - localhost:номер_порта/имя_папки/<br>
+index.html - основная страница<br>
+newuser.html - страница добавления данных<br>
+manager.js - управление страницами на AngularJS<br>
+Использован Bootstrap<br>
+Не реализована валидация данных и обработка ошидбок от сервера.<br>
