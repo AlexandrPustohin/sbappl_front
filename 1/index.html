@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Simple Collapsible</h2>
+  <p>Click on the button to toggle between showing and hiding content.</p>
+  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+  <div id="demo" class="collapse">
+  <table class="table table-sm" >
+					<thead class="thead-light">
+						<tr>
+							<th>Имя</th><th>Псевдоним</th><th>JNDI имя</th><th>Описание</th><th>Категоря</th><th>URL</th>
+							<th>Тайм-аут</th><th>Мин число соединений</th><th>Макс число соединений</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control" id="name" ng-model="userprofileFilter.name"></td>
+							<td><input type="text" class="form-control" id="nickName" ng-model="userprofileFilter.nickName"></td>
+							<td><input type="text" class="form-control" id="jndiName" ng-model="userprofileFilter.jndiName"></td>
+							<td><input type="text" class="form-control" id="description" ng-model="userprofileFilter.description"></td>
+							<td><input type="text" class="form-control" id="category" ng-model="userprofileFilter.category"></td>
+							<td><input type="text" class="form-control" id="urlStr" ng-model="userprofileFilter.urlStr"></td>
+							<td><input type="number" class="form-control" id="timeOutConnection" ng-model="userprofileFilter.timeOutConnection"></td>
+							<td><input type="number" class="form-control" id="maxNumberConn" ng-model="userprofileFilter.maxNumberConn"></td>
+							<td><input type="number" class="form-control" id="minNumberConn" ng-model="userprofileFilter.minNumberConn"></td>
+							<td><a ng-click="filterUserprofile(userprofileFilter)" class="btn btn-info btn">Применить</a></td>
+						</tr>
+					</tbody>
+					
+			</table>	
+</div>
+<table class="table table-sm" >
+					<thead class="thead-light">
+						<tr>
+							<th>№</th>
+							<th>Имя</th>
+							<th>Пароль</th>
+							<th>Псевдоним</th>
+							<th>JNDI имя</th>
+							<th>Описание</th>
+							<th>Категоря</th>
+							<th>URL</th>
+							<th>Тайм-аут</th>
+							<th>Мин число соединений</th>
+							<th>Макс число соединений</th>
+							<th></th><th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="userprofile in userprofiles">
+							<td> <input type="number" class=" form-control" id="id" ng-model="userprofile.id" disabled> </td>
+							<td ><input type="text" class="form-control" id="name" ng-model="userprofile.name"></td>
+							<td><input type="text" class="form-control" id="pass" ng-model="userprofile.pass"></td>
+							<td><input type="text" class="form-control" id="nickName" ng-model="userprofile.nickName"></td>
+							<td><input type="text" class="form-control" id="jndiName" ng-model="userprofile.jndiName"></td>
+							<td><input type="text" class="form-control" id="description" ng-model="userprofile.description"></td>
+							<td><input type="text" class="form-control" id="category" ng-model="userprofile.category"></td>
+							<td><input type="text" class="form-control" id="urlStr" ng-model="userprofile.urlStr"></td>
+							<td><input type="number" class="form-control" id="timeOutConnection" ng-model="userprofile.timeOutConnection"></td>
+							<td><input type="number" class="form-control" id="maxNumberConn" ng-model="userprofile.maxNumberConn"></td>
+							<td><input type="number" class="form-control" id="minNumberConn" ng-model="userprofile.minNumberConn"></td>
+							<td><a ng-click="editUserprofile(userprofile)" class="btn btn-info btn">Сохранить</i></a></td>
+							<td><a ng-click="deleteUserprofile(userprofile)" class="btn btn-danger btn">Удалить</a></td>
+							
+						</tr>
+					</tbody>
+					
+		 </table>
+</body>
+</html>

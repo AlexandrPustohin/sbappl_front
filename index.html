@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Менеджер профилей</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	  <script src="./manager.js"></script>
+      <link href="./main.css" rel="stylesheet" />
+       
+      <head>
+<body ng-app="UserProfileManager" ng-controller="UserProfileManagerController">
+    <div class="container-fluid">
+		<div class="alert alert-primary" role="alert">
+			<h3>
+				Менеджер профилей пользователей
+			</h3>
+		</div>
+		<a href="./newuser.html" class="btn btn-info">Добавить</a>
+		<button type="button" class="btn btn-primary float-right" data-toggle="collapse" data-target="#demo">Фильтры</button>
+		<p></p>
+		<div id="demo" class="collapse">
+			<table class="table table-sm" >
+				<thead class="thead-light">
+					<tr>
+					<th>Имя</th><th>Псевдоним</th><th>JNDI имя</th><th>Описание</th><th>Категория</th><th>URL</th>
+					<th>Тайм-аут</th><th>Мин число соединений</th><th>Макс число соединений</th>
+					<th></th><th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" id="name" ng-model="userprofilesFilter.name"></td>
+						<td><input type="text" class="form-control" id="nickName" ng-model="userprofilesFilter.nickName"></td>
+						<td><input type="text" class="form-control" id="jndiName" ng-model="userprofilesFilter.jndiName"></td>
+						<td><input type="text" class="form-control" id="description" ng-model="userprofilesFilter.description"></td>
+						<td><input type="text" class="form-control" id="category" ng-model="userprofilesFilter.category"></td>
+						<td><input type="text" class="form-control" id="urlStr" ng-model="userprofilesFilter.urlStr"></td>
+						<td><input type="number" class="form-control" id="timeOutConnection" ng-model="userprofilesFilter.timeOutConnection"></td>
+						<td><input type="number" class="form-control" id="maxNumberConn" ng-model="userprofilesFilter.maxNumberConn"></td>
+						<td><input type="number" class="form-control" id="minNumberConn" ng-model="userprofilesFilter.minNumberConn"></td>
+						<td><a ng-click="filterUserprofile(userprofilesFilter)" class="btn btn-info btn">Применить</a></td>
+						<td><a ng-click="clearFilterUserProfile(userprofilesFilter)" class="btn btn-danger btn">Очистить</a></td>
+					</tr>
+				</tbody>		
+			</table>	
+		</div>
+			
+		<p></p>
+		<table class="table table-sm" >
+					<thead class="thead-light">
+						<tr>
+							<th>№</th>
+							<th>Имя</th>
+							<th>Пароль</th>
+							<th>Псевдоним</th>
+							<th>JNDI имя</th>
+							<th>Описание</th>
+							<th>Категоря</th>
+							<th>URL</th>
+							<th>Тайм-аут</th>
+							<th>Мин число соединений</th>
+							<th>Макс число соединений</th>
+							<th></th><th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="userprofile in userprofiles">
+							<td> <input type="number" class=" form-control" id="id" ng-model="userprofile.id" disabled> </td>
+							<td ><input type="text" class="form-control" id="name" ng-model="userprofile.name"></td>
+							<td><input type="text" class="form-control" id="pass" ng-model="userprofile.pass"></td>
+							<td><input type="text" class="form-control" id="nickName" ng-model="userprofile.nickName"></td>
+							<td><input type="text" class="form-control" id="jndiName" ng-model="userprofile.jndiName"></td>
+							<td><input type="text" class="form-control" id="description" ng-model="userprofile.description"></td>
+							<td><input type="text" class="form-control" id="category" ng-model="userprofile.category"></td>
+							<td><input type="text" class="form-control" id="urlStr" ng-model="userprofile.urlStr"></td>
+							<td><input type="number" class="form-control" id="timeOutConnection" ng-model="userprofile.timeOutConnection"></td>
+							<td><input type="number" class="form-control" id="maxNumberConn" ng-model="userprofile.maxNumberConn"></td>
+							<td><input type="number" class="form-control" id="minNumberConn" ng-model="userprofile.minNumberConn"></td>
+							<td><a ng-click="editUserprofile(userprofile)" class="btn btn-info btn">Сохранить</i></a></td>
+							<td><a ng-click="deleteUserprofile(userprofile)" class="btn btn-danger btn">Удалить</a></td>
+							
+						</tr>
+					</tbody>
+					
+		 </table>
+	</div>
+	</body>
+</html>
