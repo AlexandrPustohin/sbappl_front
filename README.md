@@ -1,5 +1,5 @@
-# sbappl_front
-front-end for sb application  <br>
+# userProfule_front
+Фронт-енд часть для REST сервиса UserProfile <br>
 Фронт-енд часть для REST сервиса UserProfile<br>
 Запускается через сервер (можно Apach или другой) - localhost:номер_порта/имя_папки/<br>
 index.html - основная страница<br>
